@@ -2,6 +2,8 @@
 
 Herramienta web de ahorro con aportes al cierre, tasas bancarias consultadas en una fuente externa y explicación del modelo mediante Transformada Z. El proyecto acompaña un coloquio de Análisis Numérico de Ingeniería en Sistemas de la UTN; la presentación académica se prepara aparte.
 
+Integrantes: **Agustin Macello** y **Francisco Monzoni**. Repositorio: [capital-discreto en GitHub](https://github.com/Musta1ne/capital-discreto).
+
 La aplicación integra el simulador, la consulta de tasas de varias entidades, el modelo matemático, la comparación de precisión numérica y un ajuste opcional por inflación, desactivado por defecto. La lógica de cálculo y la adaptación de datos externos están separadas de la interfaz.
 
 ## Ejecutar
@@ -239,7 +241,7 @@ La consulta real de IPC en el navegador devolvió **octubre de 2026, 2,2 % mensu
 
 ## Pendientes académicos
 
-Para completar el coloquio quedan la presentación aparte, el informe de 5 a 8 páginas en Word y PDF según la plantilla, los datos de los autores y la revisión personal de la derivación y del análisis de precisión. Deben mantenerse al menos tres referencias APA y documentarse el uso de IA y cualquier cálculo en Python efectivamente ejecutado.
+Para completar el coloquio quedan la presentación aparte, el informe de 5 a 8 páginas en Word y PDF según la plantilla, la incorporación de los datos institucionales y de contacto requeridos y la revisión personal de la derivación y del análisis de precisión. Deben mantenerse al menos tres referencias APA y documentarse el uso de IA y cualquier cálculo en Python efectivamente ejecutado.
 
 La exposición prevista es de unos 10 minutos más 5 minutos de preguntas. Los materiales deben entregarse al menos 72 horas antes según las condiciones de la cátedra. Esta fase no genera el informe ni publica la herramienta.
 

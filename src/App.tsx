@@ -617,11 +617,26 @@ export default function App() {
           <br />
           La tasa de hoy no garantiza la tasa de futuras renovaciones.
         </p>
-        <span className="footer-meta">
+        <div className="footer-meta">
           ANÁLISIS NUMÉRICO
           <br />
           <span>Ingeniería en Sistemas · UTN</span>
-        </span>
+          <p className="footer-members">
+            <span>Integrantes</span>
+            Agustin Macello
+            <br />
+            Francisco Monzoni
+          </p>
+          <a
+            className="button button-subtle footer-repository"
+            href="https://github.com/Musta1ne/capital-discreto"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ver el repositorio de Capital Discreto en GitHub (se abre en una pestaña nueva)"
+          >
+            Ver repositorio en GitHub <Icon name="arrow-right" size={15} />
+          </a>
+        </div>
       </footer>
     </div>
   );

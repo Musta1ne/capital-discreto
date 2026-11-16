@@ -950,6 +950,22 @@ tbody tr:last-child th {
   letter-spacing: 0;
   color: #5e7950;
 }
+.footer-members {
+  margin: 10px 0 12px;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 1.7;
+  color: #b5c7a9;
+}
+.footer-members > span {
+  display: block;
+  font-size: 10px;
+  color: #839b74;
+}
+.footer-repository {
+  white-space: nowrap;
+  letter-spacing: 0;
+}
 .notice {
   padding: 11px 15px;
   margin: 0 0 18px;
@@ -2032,6 +2048,13 @@ tbody tr:last-child th {
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;
+  }
+}
+@media (max-width: 640px) {
+  .site-footer .footer-meta {
+    width: 100%;
+    text-align: left;
+    margin-left: 0;
   }
 }
 
