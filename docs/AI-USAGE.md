@@ -148,3 +148,25 @@ La portada del apunte corresponde a Matemática Superior de la UTN, Facultad Reg
 La tabla de propiedades numera sus filas pero no imprime sus nombres; las denominaciones de la explicación provienen del apunte. La tabla de pares no numera las entradas, por lo que no se inventan números de fórmula para escalón, rampa o exponencial. El material del MIT se conserva como complemento, mientras que los tres PDF orientan el vocabulario y el procedimiento del curso.
 
 La correspondencia queda documentada en [COURSE-ALIGNMENT.md](COURSE-ALIGNMENT.md), sin copiar los PDF a los archivos públicos ni mostrar rutas personales. Esta fase modifica contenido y notación, sin cambiar las fórmulas de los motores de cálculo. Se completó la compilación, se renderizaron 38 expresiones estáticas de KaTeX sin errores, se comprobaron seis evaluaciones de las fracciones parciales y se revisaron los seis pasos y su lectura móvil en el navegador. No se atribuye una nueva ejecución a las pruebas anteriores de los motores, que no se modificaron.
+
+## Preparación de la presentación y verificación con Python
+
+Se preparó el archivo `output/presentations/Capital_Discreto_Coloquio_2026.pptx`, con doce diapositivas para unos diez minutos, notas del expositor, fuentes y una declaración visible de asistencia de IA. Este apartado registra el alcance realizado y no transcribe literalmente un nuevo prompt del estudiante.
+
+ChatGPT/Codex asistió en la revisión de la derivación, las cuentas desarrolladas paso a paso, la programación, la redacción y la elaboración del PowerPoint. No se atribuye a los integrantes la realización de las cuentas manuales o del código sin asistencia. Su responsabilidad es revisar, comprender y defender el contenido y sus supuestos.
+
+En esta fase **sí se ejecutó Python**: `python scripts/verify_colloquium.py` completó 41 comprobaciones y guardó los resultados en `docs/presentation-data.json`. El registro incluye versiones de Python y Node.js, fecha de ejecución, casos comparados y las evaluaciones de las funciones reales de `src/lib/savings.ts`. Las afirmaciones de los apartados anteriores sobre ausencia de una ejecución de Python corresponden a aquellas etapas previas.
+
+Las referencias `Decimal` de las recurrencias con entradas decimales finitas se contrastaron con las evaluaciones en punto flotante. Su exactitud se limita a los casos y operaciones verificados; la referencia del ajuste por inflación usa una aproximación de alta precisión con logaritmos y exponenciales. Estas 41 comprobaciones son evidencia de preparación del coloquio, no pruebas nuevas añadidas al conjunto del producto.
+
+La siguiente síntesis de la tarea asistida de verificación está registrada en `metadata.verificationInstructionSummary`:
+
+> Resolver y(0)=0, y(n+1)=1,03y(n)+100000 hasta n=3, comparar con fórmula por Z y verificar con Python
+
+Este bloque resume la tarea; **no es una cita literal del usuario ni evidencia de un prompt adicional**. Los extractos literales del requerimiento del usuario permanecen identificados en los apartados anteriores y en la diapositiva sobre IA.
+
+El generador es `node scripts/create_presentation.mjs`. Utiliza `pptxgenjs`, `sharp` y `mathjax-full`, instalados de forma privada en `tmp/presentation-build`, sin incorporarlos a las dependencias de la aplicación. Los textos, las tablas y el gráfico son objetos editables del PowerPoint. Las fórmulas se insertan como PNG y su fuente LaTeX queda en las notas; no se afirma que sean ecuaciones nativas editables de PowerPoint.
+
+Los valores monetarios, la TNA elegida y el escenario de inflación mensual del 10 % de las diapositivas son didácticos. La presentación no convierte esas hipótesis en una tasa bancaria o un IPC vigente, ni en un pronóstico. El informe Word/PDF y el ensayo de la exposición siguen pendientes.
+
+Se validó la estructura del PPTX, sus doce notas, las tablas nativas y los datos del gráfico frente al libro incrustado. La revisión visual cubrió las doce diapositivas renderizadas con LibreOffice 26.2.7. Se corrigieron espacios, legibilidad y la conservación de los valores cero del gráfico. Los archivos temporales de esa revisión no se incluyen en la entrega. Esta comprobación no se atribuye a una ejecución de Microsoft PowerPoint.

@@ -1,6 +1,6 @@
 ﻿# Capital discreto
 
-Herramienta web de ahorro con aportes al cierre, tasas bancarias consultadas en una fuente externa y explicación del modelo mediante Transformada Z. El proyecto acompaña un coloquio de Análisis Numérico de Ingeniería en Sistemas de la UTN; la presentación académica se prepara aparte.
+Herramienta web de ahorro con aportes al cierre, tasas bancarias consultadas en una fuente externa y explicación del modelo mediante Transformada Z. El proyecto acompaña un coloquio de Análisis Numérico de Ingeniería en Sistemas de la UTN; la presentación académica se entrega como archivo PowerPoint separado de la web.
 
 Integrantes: **Agustin Macello** y **Francisco Monzoni**. Repositorio: [capital-discreto en GitHub](https://github.com/Musta1ne/capital-discreto).
 
@@ -26,6 +26,32 @@ npm run preview
 `npm test` ejecuta Vitest. `npm run build` comprueba los tipos y produce `dist/`; `npm run preview` sirve esa compilación, por lo que requiere ejecutar antes el build. También está disponible `npm run test:watch` para desarrollo.
 
 La aplicación se ejecuta localmente en esta fase, sin backend ni base de datos y sin publicación en un hosting.
+
+## Presentación del coloquio
+
+Archivo: [Capital_Discreto_Coloquio_2026.pptx](output/presentations/Capital_Discreto_Coloquio_2026.pptx).
+
+La presentación contiene **12 diapositivas para unos 10 minutos**, con notas del expositor, tiempos orientativos, fuentes y declaración de uso de IA. Los textos, las tablas y el gráfico se conservan como objetos editables de PowerPoint. Las fórmulas son imágenes PNG; su fuente LaTeX figura en las notas para poder regenerarlas.
+
+Los importes, las tasas y el supuesto de inflación mensual del 10 % empleados en el archivo son **datos didácticos**, no ofertas bancarias ni valores vigentes del IPC. La presentación usa casos reproducibles y no consulta las APIs para completar sus ejemplos.
+
+### Reproducir los cálculos y generar el archivo
+
+Se requiere Python 3.11 o superior, además de Node.js. Desde la raíz del repositorio:
+
+```sh
+python scripts/verify_colloquium.py
+npm install --prefix tmp/presentation-build --no-save pptxgenjs@4.0.1 sharp mathjax-full jszip
+node scripts/create_presentation.mjs
+```
+
+El primer comando guarda la evidencia en [docs/presentation-data.json](docs/presentation-data.json). Su ejecución real completó **41 comprobaciones** sobre los ejemplos, las evaluaciones de Python y las funciones TypeScript del producto. Utiliza la biblioteca estándar de Python y referencias `Decimal`; las referencias de recurrencias decimales finitas son exactas para los casos comprobados y la referencia de inflación es una evaluación aproximada de alta precisión.
+
+Estas 41 comprobaciones pertenecen a la preparación del coloquio y no se cuentan como pruebas nuevas de la aplicación. Las dependencias del generador se instalan exclusivamente en `tmp/presentation-build`, fuera de las dependencias de la web.
+
+El generador escribe `tmp/presentation-build/Capital_Discreto_Coloquio_2026.candidate.pptx` y un manifiesto con las notas y los tiempos. Regenerar ese candidato no reemplaza automáticamente el archivo de entrega de `output/presentations/`.
+
+La entrega se verificó estructuralmente y se revisaron las doce diapositivas renderizadas con LibreOffice 26.2.7. Se comprobaron las doce notas y la correspondencia entre los 26 valores del gráfico, su caché y el libro de datos incrustado. Los PDF y las imágenes utilizados para esa revisión permanecen en `tmp/`.
 
 ## Uso
 
@@ -219,6 +245,9 @@ La coincidencia verifica consistencia entre evaluaciones; no demuestra por sí s
 - `CONTEXT.md`: glosario del dominio.
 - `docs/AI-USAGE.md`: uso de IA, extractos de prompts y cambios de alcance.
 - `docs/COURSE-ALIGNMENT.md`: correspondencia entre la explicación, el apunte y las dos tablas suministradas.
+- `scripts/verify_colloquium.py` y `docs/presentation-data.json`: cálculo reproducible y evidencia de los ejemplos de la presentación.
+- `scripts/create_presentation.mjs`: generador del PowerPoint con dependencias privadas de preparación.
+- `output/presentations/Capital_Discreto_Coloquio_2026.pptx`: presentación de 12 diapositivas con notas.
 
 Se usan React, TypeScript, Vite, Tailwind CSS, Recharts, KaTeX y Vitest. La interfaz está en español y los identificadores del código en inglés.
 
@@ -241,7 +270,7 @@ La consulta real de IPC en el navegador devolvió **octubre de 2026, 2,2 % mensu
 
 ## Pendientes académicos
 
-Para completar el coloquio quedan la presentación aparte, el informe de 5 a 8 páginas en Word y PDF según la plantilla, la incorporación de los datos institucionales y de contacto requeridos y la revisión personal de la derivación y del análisis de precisión. Deben mantenerse al menos tres referencias APA y documentarse el uso de IA y cualquier cálculo en Python efectivamente ejecutado.
+Para completar el coloquio quedan el informe de 5 a 8 páginas en Word y PDF según la plantilla, la incorporación de los datos institucionales y de contacto requeridos y el ensayo de la presentación con revisión personal de la derivación y del análisis de precisión. Deben mantenerse al menos tres referencias APA y revisar que la declaración de IA refleje la asistencia recibida en las cuentas paso a paso, el código, la redacción y la presentación.
 
 La exposición prevista es de unos 10 minutos más 5 minutos de preguntas. Los materiales deben entregarse al menos 72 horas antes según las condiciones de la cátedra. Esta fase no genera el informe ni publica la herramienta.
 
