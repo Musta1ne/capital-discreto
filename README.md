@@ -31,7 +31,7 @@ La aplicación se ejecuta localmente en esta fase, sin backend ni base de datos 
 
 Archivo: [Capital_Discreto_Coloquio_2026.pptx](output/presentations/Capital_Discreto_Coloquio_2026.pptx).
 
-La presentación contiene **12 diapositivas para unos 10 minutos**, con notas del expositor, tiempos orientativos, fuentes y declaración de uso de IA. Los textos, las tablas y el gráfico se conservan como objetos editables de PowerPoint. Las fórmulas son imágenes PNG; su fuente LaTeX figura en las notas para poder regenerarlas.
+La versión actual de la presentación contiene **10 diapositivas**, con guiones del expositor y referencias. El gráfico de evolución y las fórmulas se incluyen como imágenes. El generador conserva la versión base de doce diapositivas, con tiempos, conclusiones y declaración de uso de IA; sus expresiones LaTeX están en `scripts/create_presentation.mjs`.
 
 Los importes, las tasas y el supuesto de inflación mensual del 10 % empleados en el archivo son **datos didácticos**, no ofertas bancarias ni valores vigentes del IPC. La presentación usa casos reproducibles y no consulta las APIs para completar sus ejemplos.
 
@@ -51,7 +51,13 @@ Estas 41 comprobaciones pertenecen a la preparación del coloquio y no se cuenta
 
 El generador escribe `tmp/presentation-build/Capital_Discreto_Coloquio_2026.candidate.pptx` y un manifiesto con las notas y los tiempos. Regenerar ese candidato no reemplaza automáticamente el archivo de entrega de `output/presentations/`.
 
-La entrega se verificó estructuralmente y se revisaron las doce diapositivas renderizadas con LibreOffice 26.2.7. Se comprobaron las doce notas y la correspondencia entre los 26 valores del gráfico, su caché y el libro de datos incrustado. Los PDF y las imágenes utilizados para esa revisión permanecen en `tmp/`.
+La versión base se verificó estructuralmente y se revisaron sus doce diapositivas renderizadas con LibreOffice 26.2.7. Se comprobaron las doce notas y la correspondencia entre los 26 valores del gráfico, su caché y el libro de datos incrustado. Esas verificaciones corresponden a la versión base, previa a los cambios de la presentación actual. Los PDF y las imágenes utilizados para esa revisión permanecen en `tmp/`.
+
+## Informe del coloquio
+
+El informe sigue la plantilla de la materia y se entrega en [Word](output/documents/Capital_Discreto_Informe_2026.docx) y [PDF](output/pdf/Capital_Discreto_Informe_2026.pdf). Tiene ocho páginas, ecuaciones nativas de Word, resolución paso a paso, un fragmento de Python, tablas, un gráfico, análisis de precisión, ajuste por inflación, referencias y declaración de uso de IA. La portada incluye los datos institucionales y los correos de ambos integrantes.
+
+Se revisaron las ocho páginas renderizadas. La actualización del correo de Francisco conservó el resto del documento; las páginas 2 a 8 del PDF permanecieron idénticas en la comparación visual.
 
 ## Uso
 
@@ -270,9 +276,9 @@ La consulta real de IPC en el navegador devolvió **octubre de 2026, 2,2 % mensu
 
 ## Pendientes académicos
 
-Para completar el coloquio quedan el informe de 5 a 8 páginas en Word y PDF según la plantilla, la incorporación de los datos institucionales y de contacto requeridos y el ensayo de la presentación con revisión personal de la derivación y del análisis de precisión. Deben mantenerse al menos tres referencias APA y revisar que la declaración de IA refleje la asistencia recibida en las cuentas paso a paso, el código, la redacción y la presentación.
+Para completar el coloquio quedan la revisión personal del informe y el ensayo de la presentación, especialmente la derivación y el análisis de precisión. La declaración de IA debe reflejar la asistencia recibida en las cuentas paso a paso, el código, la redacción y la presentación.
 
-La exposición prevista es de unos 10 minutos más 5 minutos de preguntas. Los materiales deben entregarse al menos 72 horas antes según las condiciones de la cátedra. Esta fase no genera el informe ni publica la herramienta.
+La exposición prevista es de unos 10 minutos más 5 minutos de preguntas. Los materiales deben entregarse al menos 72 horas antes según las condiciones de la cátedra. La herramienta sigue sin publicarse en un hosting.
 
 ## Fuentes
 

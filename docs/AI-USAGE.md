@@ -170,3 +170,13 @@ El generador es `node scripts/create_presentation.mjs`. Utiliza `pptxgenjs`, `sh
 Los valores monetarios, la TNA elegida y el escenario de inflación mensual del 10 % de las diapositivas son didácticos. La presentación no convierte esas hipótesis en una tasa bancaria o un IPC vigente, ni en un pronóstico. El informe Word/PDF y el ensayo de la exposición siguen pendientes.
 
 Se validó la estructura del PPTX, sus doce notas, las tablas nativas y los datos del gráfico frente al libro incrustado. La revisión visual cubrió las doce diapositivas renderizadas con LibreOffice 26.2.7. Se corrigieron espacios, legibilidad y la conservación de los valores cero del gráfico. Los archivos temporales de esa revisión no se incluyen en la entrega. Esta comprobación no se atribuye a una ejecución de Microsoft PowerPoint.
+
+## Elaboración del informe y datos de contacto
+
+Posteriormente, el usuario solicitó el informe conforme a `Plantilla_Trabajo_Analisis_Numerico 2026.docx`. Codex asistió en su redacción, la adaptación del formato, las ecuaciones nativas de Word y la preparación del gráfico y de las tablas con los resultados ya registrados. El informe declara esta asistencia y distingue la resolución analítica, las ejecuciones numéricas y el análisis que deben revisar y defender los integrantes.
+
+Se entregaron Word y PDF de ocho páginas, con resumen de 135 palabras, 19 ecuaciones nativas, tres tablas y una figura. Se conservaron Times New Roman 11, interlineado 1,15, papel Carta y márgenes de 2,5 cm de la plantilla. La revisión incluyó todas las páginas renderizadas y la ejecución del fragmento Python para el caso principal y la tasa cero; no se atribuye una nueva ejecución a las 41 comprobaciones previas.
+
+Los integrantes proporcionaron sus correos para la portada. La última actualización incorporó el de Francisco mediante un cambio puntual del DOCX y regeneración del PDF. Se verificaron ambos correos, las ocho páginas y la igualdad visual de las páginas 2 a 8 respecto de la versión anterior. Los archivos de preparación y revisión permanecen en `tmp/`.
+
+Al preparar el commit solicitado, el PowerPoint tenía cambios pendientes respecto de la versión base: diez diapositivas, sin las diapositivas separadas de conclusiones y declaración de IA, con el gráfico convertido en imagen y notas reducidas a los guiones. Se comprobó la integridad del paquete y sus relaciones internas; la revisión visual de doce diapositivas documentada antes corresponde a la versión base. La declaración completa de asistencia de IA permanece en este registro y en el informe.
